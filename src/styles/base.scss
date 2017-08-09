@@ -1,0 +1,37 @@
+/*-------------------------------------------------
+  Base Styles
+-------------------------------------------------*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+html {
+  font-size: $base-font-size;
+}
+body {
+  padding-top: 60px; // space for navbar
+  background: $white;
+  font-family: $font-family-display;
+  @include screen('non-mobile'){
+    padding-top: 80px;
+  }
+}
+
+a {
+  @extend %link;
+  &:visited {
+    @extend %link;
+  }
+  &:hover {
+    @extend %link;
+  }
+  &:active {
+    @extend %link;
+  }
+}

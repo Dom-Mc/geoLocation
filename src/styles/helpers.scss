@@ -1,0 +1,50 @@
+/*-------------------------------------------------
+  Helpers
+-------------------------------------------------*/
+// Links & Buttons
+%link {
+	text-decoration: none;
+  outline: 0;
+}
+
+%button-state {
+  &:hover,
+  &:active {
+    color: $white;
+    background: lighten( $river-bed, 5% );
+  }
+}
+
+%tab-state {
+  &:hover,
+  &:active {
+    color: $white;
+    background: $river-bed;
+  }
+}
+
+// Text
+%shaddow {
+  text-shadow: 0 1px 0 rgba($white, 0.4);
+}
+
+// Layouts
+%container {
+  text-align: center;
+  padding: 0 5%;
+}
+
+%section-headline {
+  font-family: $font-family-display;
+  font-size: $font-size-regular + .25;
+  margin: 0;
+  @extend %shaddow;
+  @include screen('non-mobile') {
+  }
+  @include screen('tablet') {
+    font-size: $font-size-lg;
+  }
+  @include screen('desktop') {
+    font-size: $font-size-xx-lg;
+  }
+}

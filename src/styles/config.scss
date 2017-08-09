@@ -1,0 +1,35 @@
+/*-------------------------------------------------
+  Config
+-------------------------------------------------*/
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,700');
+
+$font-family-text   :	source-sans-pro, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-display: 'Comfortaa', Frutiger, Calibri, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$base-font-size      : 16px;
+$font-size-regular   : 1rem; //16px
+$font-size-med       : 1.25rem;
+$font-size-lg        : 1.5rem; //24px
+$font-size-x-lg      : 1.875rem; //30px
+$font-size-xx-lg     : 2.25rem; //36px
+$font-size-xxx-lg    : 2.625rem; //42px
+$font-size-xxxx-lg   : 3rem; //48px
+$base-line-height    : 24px;
+$font-weight-light   : 300;
+$font-weight-regular : 400;
+$font-weight-bold	   : 700;
+
+// Colors
+$github        : #24292e;
+$jet           : #222222;
+$white         : #ffffff;
+$vapor         : #f6f6f6;
+$smoke         : #eeeeee;
+$river-bed     : #48525c;
+$pomegranate   : #f04124;
+$Waterloo      : #89849b;
+
+// Media Queries
+$tablet-width : 768px;
+$desktop-width: 1024px;

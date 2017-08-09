@@ -1,0 +1,284 @@
+/*-------------------------------------------------
+  Text & Headers
+-------------------------------------------------*/
+.site-title {
+  color: $github;
+  opacity: .9;
+  font-size: $font-size-xxx-lg;
+  font-family: $font-family-display;
+  font-weight: $font-weight-bold;
+  @extend %shaddow;
+  @include screen('tablet') {
+    font-size: $font-size-lg * 3;
+  }
+  @include screen('desktop') {
+    font-size: $font-size-lg * 4;
+  }
+}
+
+.section-headline--user {
+  @extend %section-headline;
+}
+.section-headline--domain {
+  margin: 0 0 2rem;
+  @extend %section-headline;
+}
+
+
+/*-------------------------------------------------
+  Images
+-------------------------------------------------*/
+.background-image {
+  background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+url('../images/background.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  min-height: 500px;
+}
+
+
+/*-------------------------------------------------
+  Footer
+-------------------------------------------------*/
+.footer {
+  text-align: center;
+  margin-top: 3rem;
+	padding: 2em 0;
+  color: $river-bed;
+  font-size: $font-size-regular - .15;
+  font-weight: $font-weight-light;
+  @include screen('non-mobile'){
+    font-size: $font-size-regular;
+  }
+  @include screen('tablet') {
+    margin-top: 1.5rem;
+  }
+  @include screen('desktop') {
+    margin-top: 4.5rem;
+  }
+}
+
+
+/*-------------------------------------------------
+  Navigation
+-------------------------------------------------*/
+.ui.menu {
+  height: 60px;
+  background: rgba($github, 0.96);
+  font-family: $font-family-display;
+  font-size: $font-size-regular;
+  @include screen('non-mobile'){
+    height: 80px;
+  }
+  .item {
+    font-weight: $font-weight-light;
+    color: $white;
+    &:before {
+      background: none;
+    }
+  }
+
+  // Website & User tabs
+  .right.menu {
+    .item {
+      display: none;
+      font-weight: $font-weight-light;
+      font-size: 1.15rem;
+      @extend %tab-state;
+      @include screen('non-mobile') {
+        display: inherit;
+        margin-right: 2rem;
+      }
+    }
+  }
+}
+
+
+/*-------------------------------------------------
+  Buttons
+-------------------------------------------------*/
+.ui.button {
+  background: #48525c;
+  color: $white;
+  font-weight: $font-weight-light;
+  &.submit {
+    @extend %button-state;
+  }
+  .button-group & {
+    margin-top: 4rem;
+    @extend %button-state;
+    @include screen('(max-width: 350px)'){
+      width: 40%;
+    }
+  }
+}
+
+
+/*-------------------------------------------------
+  Form
+-------------------------------------------------*/
+.domain-form {
+  margin: 0 auto;
+  width: 100%;
+  @include screen('non-mobile') {
+    width: 75%;
+  }
+}
+
+
+/*-------------------------------------------------
+  Map
+-------------------------------------------------*/
+.map-marker {
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 0;
+  position: absolute;
+  transform: rotate(-45deg);
+  left: 50%;
+  top: 50%;
+  margin: -20px 0 0 -20px;
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  &:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    margin: 10px 0 0 10px;
+    background: $vapor;
+    position: absolute;
+    border-radius: 50%;
+  }
+}
+.pulsate {
+	background: rgba(0,0,0,0.1);
+	border-radius: 50%;
+	height: 14px;
+	width: 14px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: 11px 0px 0px -12px;
+	transform: rotateX(55deg);
+	z-index: -2;
+  &:after {
+  	content: "";
+  	border-radius: 50%;
+  	height: 40px;
+  	width: 40px;
+  	position: absolute;
+  	margin: -13px 0 0 -13px;
+  	animation: pulsate 1s ease-out;
+  	animation-iteration-count: infinite;
+  	opacity: 0;
+  	box-shadow: 0 0 1px 2px $Waterloo;
+  	animation-delay: 2s;
+    z-index: 1000;
+  }
+}
+
+@keyframes pulsate {
+	0% {
+		transform: scale(0.1, 0.1);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(1.2, 1.2);
+		opacity: 0;
+	}
+}
+
+@keyframes bounce {
+	0% {
+		opacity: 0;
+		transform: translateY(-2000px) rotate(-45deg);
+	}
+
+	60% {
+		opacity: 1;
+		transform: translateY(30px) rotate(-45deg);
+	}
+
+	80% {
+		transform: translateY(-10px) rotate(-45deg);
+	}
+
+	100% {
+		transform: translateY(0) rotate(-45deg);
+	}
+}
+
+
+/*-------------------------------------------------
+  Icons
+-------------------------------------------------*/
+// Question Mark icon
+.question.circle.icon {
+  cursor: pointer;
+  font-size: 1rem;
+  margin-left: 7px;
+  vertical-align: top;
+}
+
+// Arrow icon
+.arrow {
+  color: $white;
+  &-icon--down {
+    &:hover,
+    &:active {
+      color: $river-bed;
+    }
+    color: $white;
+    opacity: .7;
+    font-size: 4rem;
+  }
+}
+
+// Search icon
+.ui.icon.input>i.icon {
+  opacity: .8;
+}
+
+// Map Marker
+.logo--map-marker {
+  color: $pomegranate;
+  font-size: 2rem;
+}
+
+/*-------------------------------------------------
+  Logo
+-------------------------------------------------*/
+.logo {
+  font-family: $font-family-display;
+  font-size: $font-size-regular;
+  @include screen('tablet') {
+    font-size: $font-size-x-lg;
+  }
+  @include screen('desktop') {
+    font-size: $font-size-xx-lg;
+  }
+  &.ui.menu.item { //overwrite semantic-ui
+    font-weight: $font-weight-light;
+  }
+}
+
+
+/*-------------------------------------------------
+  Errors
+-------------------------------------------------*/
+.ui.error.message.icon {
+  width: 50%;
+  margin: -10% auto 5rem;
+  text-align: center;
+  padding-right: 100px;
+}
